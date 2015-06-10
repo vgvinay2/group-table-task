@@ -1,0 +1,31 @@
+
+<h1>Listing Secret Codes</h1>
+
+<div class="pull-right" style="float:right;">
+  <%= form_tag secret_codes_path, :method => 'post'  do%>
+      <%= select_tag :create_secret_key_drop_down, options_for_select(["1", "10","20","50","100"],10), :prompt => "Select value" %>
+      <%=submit_tag 'Submit'%>
+  <%end%>
+</div>
+
+<table border=4>
+  <thead>
+  <tr>
+    <th>Secret key</th>
+    <th>User Name </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @secret_codes.each do |secret_code| %>
+      <tr>
+        <td><%= secret_code.secret_key %></td>
+        <td><%= secret_code.user_first_name %><%= secret_code.user_last_name %></td>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Click here for New Secret code', new_secret_code_path %>
