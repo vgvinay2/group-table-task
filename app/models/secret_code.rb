@@ -8,4 +8,9 @@ class SecretCode < ActiveRecord::Base
   def user_last_name
     user.last  if user.present?
   end
+
+   def generate_secret_code
+    SecureRandom.uuid
+   end
+
 end

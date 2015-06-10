@@ -16,7 +16,7 @@ class SecretCodesController < ApplicationController
       a = params["create_secret_key_drop_down"].to_i
       (1..a).each do
         @secret_code = SecretCode.new()
-        @secret_code.secret_key = generate_secret_code
+        @secret_code.secret_key = SecretCode.new.generate_secret_code
         @secret_code.save
       end
       redirect_to secret_codes_path, notice: 'Secret code was successfully created.'
@@ -29,12 +29,6 @@ class SecretCodesController < ApplicationController
       format.html { redirect_to secret_codes_url, notice: 'Secret code was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  private
-
-  def generate_secret_code
-    SecureRandom.uuid
   end
 
 
