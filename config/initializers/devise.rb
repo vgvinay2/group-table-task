@@ -246,7 +246,14 @@ Devise.setup do |config|
   config.omniauth :facebook,
                   ENV["FACEBOOK_APP_ID"],
                   ENV["FACEBOOK_APP_SECRET"],
-                  scope: 'email', info_fields: 'email'
+                  :scope => 'email', :provider_ignores_state => true
+
+  config.omniauth :google,
+                  ENV["GOOGLE_APP_ID"],
+                  ENV["GOOGLE_APP_SECRET"],
+                  :strategy_class => OmniAuth::Strategies::GoogleOauth2
+
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

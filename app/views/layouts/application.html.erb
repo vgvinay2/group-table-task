@@ -17,7 +17,8 @@
     <%= link_to "Sign up", new_user_registration_path %> |
     <%= link_to "Login", new_user_session_path %>
     <%= link_to "Login With Facebook", user_omniauth_authorize_path(:facebook) %>
-    <%= link_to "Login With Github", user_omniauth_authorize_path(:github) %>
+    <%= link_to "Login With Github",   user_omniauth_authorize_path(:github) %>
+    <%= link_to "Login With Google",   user_omniauth_authorize_path(:google) %>
 <% end %>
 
 <%= yield %>

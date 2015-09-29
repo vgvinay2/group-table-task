@@ -46,4 +46,8 @@ gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+# gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
+# gem "omniauth-google"
 gem 'figaro'
+gem 'psych'
